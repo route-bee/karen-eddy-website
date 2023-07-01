@@ -1,0 +1,280 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: white;
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
+}
+
+.foreground {
+    max-width: 960px;
+    padding: 20px;
+    border-radius: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* lines up the header horizontally */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#header-logo {
+    max-width: 150px;
+    padding: 20px;
+}
+
+/* lines up the nav horizontally */
+nav ul {
+    list-style: none;
+    margin-left: 20px;
+}
+
+nav ul li {
+    margin-right: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    text-align: center;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.bold-span {
+    font-weight: bold;
+}
+
+/* formats the link buttons */
+#link-buttons li {
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+
+#link-buttons li a {
+    display: block;
+    width: 120px;
+    padding: 10px;
+    border-radius: 50px;
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    text-decoration: none;
+    text-align: center;
+}
+
+
+#link-buttons a:hover {
+    background-color: #888;
+}
+
+/* formats a little of the writing above the main gallery section */
+#about {
+    text-align: center;
+}
+
+#about h2 {
+    font-style: italic;
+    padding-top: 40px;
+    padding-bottom: 15px;
+}
+
+#about p {
+    padding-bottom: 15px;
+}
+
+/* formats the five jewelry cards so that the align right and wrap into rows */
+#card-box h1 {
+    text-align: center;
+    font-size: 42px;
+    font-style: italic;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.card-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.card {
+    flex: 1;
+    max-width: 240px;
+    padding: 20px;
+    margin: 0px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.card h4, p {
+    padding: 10px;
+}
+
+.card img {
+    width: auto;
+    max-width: 200px;
+    height: 200px;
+}
+
+.card::after {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 1px;
+    background-color: black;
+}
+
+#div-main-p {
+    text-align: center;
+    max-width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+#div-main-p a {
+    color: black;
+}
+
+#div-main-p a:hover {
+    color: #888;
+}
+
+/* this section lines up the footer into a row */
+footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+footer #footer-logo {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 150px;
+    padding: 20px;
+}
+
+footer #proud-p {
+    margin: 20px 20px 20px 0px;
+    white-space: nowrap;
+}
+
+footer ul {
+    list-style-type: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-left: 1px solid black;
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+footer ul li a:hover {
+    text-decoration: underline;
+}
+
+footer #social-media {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 20px;
+}
+
+footer #social-media p {
+    margin-right: 10px;
+}
+
+footer #social-media img {
+    max-width: 150px;
+}
+
+/* the @media sections compress the header and the footer as the browser shrinks or grows past a few critical widths */
+@media (min-width: 640px) {
+    nav {
+        display: flex;
+        align-items: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .card-wrapper {
+        justify-content:space-around;
+    }
+}
+
+@media (min-width: 960px) {
+    nav ul {
+        display: flex;
+        align-items: center;
+    }
+
+    #link-buttons {
+        display: flex;
+        align-items: center;
+    }
+}
+
+@media (max-width: 960px) {
+
+    #contact-list li:first-child {
+        margin-top: 0px;
+        margin-bottom: 10px;
+    }
+
+    #contact-list li:last-child {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* flex-wrap: wrap; */
+    }
+
+    footer #footer-logo {
+        flex-basis: 100%;
+    }
+
+    footer #proud-p {
+        flex-basis: 100%;
+        text-align: center;
+    }
+
+    footer ul {
+        list-style-type: none;
+        flex-basis: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        border: none;
+        border-left: none;
+    }
+
+    footer #social-media {
+        align-items: center;
+        margin-top: 10px;
+        flex-basis: 100%;
+        text-align: center;
+    }
+}

@@ -1,0 +1,349 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: white;
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
+}
+
+.foreground {
+    max-width: 960px;
+    padding: 20px;
+    border-radius: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* lines up the header horizontally */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#header-logo {
+    max-width: 150px;
+    padding: 20px;
+}
+
+/* lines up the nav horizontally */
+nav ul {
+    list-style: none;
+    margin-left: 20px;
+}
+
+nav ul li {
+    margin-right: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+    text-align: center;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.bold-span {
+    font-weight: bold;
+}
+
+/* formats the link buttons */
+#link-buttons li {
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+
+#link-buttons li a {
+    display: inline-block;
+    width: 120px;
+    padding: 10px 10px;
+    border-radius: 50px;
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    text-decoration: none;
+}
+
+#link-buttons a:hover {
+    background-color: #888;
+}
+
+#hero {
+    background-color: rgb(180, 163, 120);
+}
+
+/* crops the hero image vertically and alow it to change its aspect ration as it resizes */
+#hero img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: 80% 80%;
+}
+
+#hero-caption {
+    display: flex;
+    align-items: center;
+}
+
+#hero-caption h1 {
+    margin: 10px 0;
+    padding: 0px 15px;
+    border-right: 1px solid black;
+}
+
+#hero-caption p {
+    margin: 10px 0;
+    padding: 0px 15px;
+}
+
+/* floats the figure inside the #inspiration division to the right and then snaps it in below. */
+.float-right {
+    float: right;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.float-right img {
+    max-width: 100%;
+}
+
+#inspiration {
+    display: flex;
+}
+
+.content {
+    flex: 1;
+}
+
+#inspiration:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#inspiration h3 {
+    padding: 20px 10px 10px 10px;
+}
+
+#inspiration p {
+    padding: 10px;
+}
+
+.float-right figcaption {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* the following calls lay out the card box which is the second part of the content */
+#card-box {
+    max-width: 70vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 100px;
+}
+
+#card-box h3 {
+    text-align: center;
+}
+
+#card-box hr {
+    margin: 0px 30px;
+}
+
+#card-box p {
+    margin-right: 7.5%;
+    text-align: right;
+}
+
+.card-wrapper {
+    display: flex;
+    justify-content: space-around;
+    max-width: 70vw;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+}
+
+.card img {
+    border-radius: 25px;
+    margin: 10px;
+    max-width: 95%;
+}
+
+#div-main-hr {
+    max-width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+}
+
+#div-main-p {
+    text-align: center;
+    max-width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+}
+
+#div-main-p a {
+    color: black;
+}
+
+#div-main-p a:hover {
+    color: #888;
+}
+
+/* this section lines up the footer into a row */
+footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+footer #footer-logo {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 150px;
+    padding: 20px;
+}
+
+footer #proud-p {
+    margin: 20px 20px 20px 0px;
+    white-space: nowrap;
+}
+
+footer ul {
+    list-style-type: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-left: 1px solid black;
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+footer ul li a:hover {
+    text-decoration: underline;
+}
+
+footer #social-media {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 20px;
+}
+
+footer #social-media p {
+    margin-right: 10px;
+}
+
+footer #social-media img {
+    max-width: 150px;
+}
+
+/* the @media sections compress the header and the footer as the browser shrinks or grows past a few critical widths */
+@media (min-width: 640px) {
+    nav {
+        display: flex;
+        align-items: center;
+    }
+}
+
+@media (min-width: 960px) {
+    nav ul {
+        display: flex;
+        align-items: center;
+    }
+
+    #link-buttons {
+        display: flex;
+        align-items: center;
+    }
+
+    #contact-list {
+        display: flex;
+        align-items: center;
+    }
+
+    .float-right img {
+        margin-left: 20px;
+    }
+}
+
+@media (max-width: 640px) {
+    .card-wrapper {
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 960px) {
+
+    #contact-list li:first-child {
+        margin-top: 0px;
+        margin-bottom: 10px;
+    }
+
+    #contact-list li:last-child {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .float-right {
+        float: none;
+    }
+
+    .float-right img {
+        width: 960px;
+    }
+
+    #inspiration {
+        flex-direction: column;
+    }
+
+    footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    footer #footer-logo {
+        flex-basis: 100%;
+    }
+
+    footer #proud-p {
+        flex-basis: 100%;
+        text-align: center;
+    }
+
+    footer ul {
+        list-style-type: none;
+        flex-basis: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        border: none;
+        border-left: none;
+    }
+
+    footer #social-media {
+        align-items: center;
+        margin-top: 10px;
+        flex-basis: 100%;
+        text-align: center;
+    }
+}
